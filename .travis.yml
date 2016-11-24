@@ -1,0 +1,15 @@
+language: go
+
+
+sudo: required
+
+go:
+  - 1.7
+
+service: 
+
+before_script:
+
+script:
+
+after_success:

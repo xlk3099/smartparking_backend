@@ -22,11 +22,11 @@ type Server struct {
 // NewServer : Function to create a new gin.Default() server.
 func NewServer() Server {
 	server := Server{gin.Default()}
-	server.LoadHTMLFiles("client_test.html")
+	server.LoadHTMLFiles("client.html")
 
 	// For testing
 	server.GET("/", func(c *gin.Context) {
-		c.HTML(200, "client_test.html", nil)
+		c.HTML(200, "client.html", nil)
 	})
 	// Restful api
 	server.GET("/parking", getParkings)
