@@ -2,7 +2,6 @@ package model
 
 // Park
 type Parking struct {
-	Id     int    `json:"id"`
-	Number string `json:"number"`
-	Empty  bool   `json:"empty"`
+	Available   bool   `json:"empty"`
+	PlateNumber string `json:"number"`
 }
