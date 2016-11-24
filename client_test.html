@@ -1,0 +1,33 @@
+<html>
+<head>
+  <title>Ausome Parking Backend</title>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+</head>
+
+<body>
+<h3></h3>
+  <pre id="output">Ausome Parking Backend</pre>
+
+  <script>
+    url = 'ws://localhost:8080/ws';
+    c = new WebSocket(url);
+
+    send = function(data){
+      $("#output").append("\n" +(new Date())+ " ==> "+data)
+      c.send(data)
+    }
+
+    c.onmessage = function(msg){
+      $("#output").append("\n"+(new Date())+ " <== "+msg.data)
+      console.log(msg)
+    }
+
+    c.onopen = function(){
+      setInterval( 
+        function(){send("Parking") }
+        , 1000 )
+    }
+  </script>
+
+</body>
+</html>
