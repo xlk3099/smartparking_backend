@@ -8,8 +8,21 @@ This is used for Autodesk ASRD 2016 Hackathon purpose, a simple server written i
   - Websocket communication support by using gorilla/websocket
 
 ### To start:
-Simply copy this repo to your machine.
-To launch the server,
+- install and configure `go` on your system
+- install 
+- in command prompt do
+```
+go get github.com/xlk3099/smartparking_backend
+go get gopkg.in/gin-gonic/gin.v1
+go get github.com/gorilla/websocket
+```
+or Simply copy this repo to your machine. and do 
+```
+go get gopkg.in/gin-gonic/gin.v1
+go get github.com/gorilla/websocket
+```
+
+- To launch the server,
 ```
     go run main.go
 ```
