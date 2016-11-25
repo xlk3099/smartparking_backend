@@ -2,16 +2,17 @@ package web
 
 import (
 	"fmt"
+	"net/http"
+
 	"github.com/gin-gonic/gin"
 	"github.com/gorilla/websocket"
 	. "github.com/xlk3099/smartparking_backend/model"
-	"net/http"
 )
 
 var Parkings = map[int]Parking{
-	1: {true, ""},
-	2: {true, ""},
-	3: {true, ""},
+	1: {1, true, "IPHONE6"},
+	2: {2, true, "SG50"},
+	3: {3, true, "ABC123"},
 }
 
 // Server : Wrap the gin.Engine type
@@ -46,7 +47,7 @@ var wsupgrader = websocket.Upgrader{
 }
 
 func getParkings(c *gin.Context) {
-
+	c.JSON(http.StatusOK, Parkings)
 }
 
 func updateParking(c *gin.Context) {
