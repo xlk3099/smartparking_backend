@@ -62,10 +62,7 @@ func wshandler(c *gin.Context) {
 	}
 
 	for {
-		_, _, err := conn.ReadMessage()
-		if err != nil {
-			break
-		}
+
 		if err = conn.WriteJSON(Parkings); err != nil {
 			fmt.Println(err)
 		}
