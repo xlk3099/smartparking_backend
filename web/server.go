@@ -31,7 +31,7 @@ func NewServer() Server {
 	})
 	// Restful api
 	server.GET("/parking", getParkings)
-	server.PUT("/parking/:id", updateParking)
+	server.PUT("/parking", updateParking)
 
 	// Websocket
 	// server.GET("/ws", func(c *gin.Context) {
@@ -52,6 +52,8 @@ func getParkings(c *gin.Context) {
 }
 
 func updateParking(c *gin.Context) {
+	c.BindJSON(&Parkings)
+	c.JSON(http.StatusOK, Parkings)
 }
 
 func wshandler(c *gin.Context) {
