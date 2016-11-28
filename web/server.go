@@ -55,15 +55,15 @@ func updateParking(c *gin.Context) {
 }
 
 func wshandler(c *gin.Context) {
-	conn, err := wsupgrader.Upgrade(c.Writer, c.Request, nil)
-	if err != nil {
-		fmt.Println("Failed to set websocket upgrade: %+v", err)
-		return
-	}
-
-	// for {
-	// 	if err = conn.WriteJSON(Parkings); err != nil {
-	// 		fmt.Println(err)
-	// 	}
+	// conn, err := wsupgrader.Upgrade(c.Writer, c.Request, nil)
+	// if err != nil {
+	// 	fmt.Println("Failed to set websocket upgrade: %+v", err)
+	// 	return
 	// }
+
+	// // for {
+	// // 	if err = conn.WriteJSON(Parkings); err != nil {
+	// // 		fmt.Println(err)
+	// // 	}
+	// // }
 }
